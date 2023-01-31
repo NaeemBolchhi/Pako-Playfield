@@ -1,0 +1,102 @@
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+html, body, content {
+  height: 100%;
+  width: 100%;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-family: monospace;
+}
+
+body {
+  background: #1c1c1c;
+  color: #dddddd;
+}
+
+content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+content inflated, content deflated {
+  position: relative;
+  height: 100%;
+  flex-grow: 1;
+  background: #222222;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+content inflated h1, content deflated h1 {
+  font-size: 1rem;
+  margin: 1rem;
+}
+content inflated textarea, content deflated textarea {
+  resize: none;
+  height: 100%;
+  width: 100%;
+  color: #dddddd;
+  background: #161616;
+  border: 4px solid #222222;
+  padding: 0.5rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+content inflated textarea:focus, content deflated textarea:focus {
+  border-color: #333333;
+}
+content inflated buttonarea, content deflated buttonarea {
+  display: flex;
+  gap: 1rem;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+content inflated buttonarea .copy, content inflated buttonarea .download, content deflated buttonarea .copy, content deflated buttonarea .download {
+  cursor: pointer;
+  height: 2.5rem;
+  width: 2.5rem;
+  fill: #cccccc;
+  background: #1c1c1c;
+  border: 2px solid #222222;
+  padding: 0.5rem;
+  border-radius: 8px;
+  box-shadow: #000000 0 0 20px;
+}
+content inflated buttonarea .copy:hover, content inflated buttonarea .download:hover, content deflated buttonarea .copy:hover, content deflated buttonarea .download:hover {
+  fill: #dddddd;
+  background: #222222;
+  border-color: #282828;
+}
+content inflated buttonarea .copy:active, content inflated buttonarea .download:active, content deflated buttonarea .copy:active, content deflated buttonarea .download:active {
+  transform: scale(0.85);
+}
+content inflated buttonarea .copy.success, content deflated buttonarea .copy.success {
+  fill: #4caf50;
+  background: #1c1c1c;
+  border-color: #4caf50;
+  transform: scale(1);
+}
+content inflated buttonarea .copy.failure, content deflated buttonarea .copy.failure {
+  fill: #f44336;
+  background: #1c1c1c;
+  border-color: #f44336;
+  transform: scale(1);
+}
+content inflated buttonarea .download.success, content deflated buttonarea .download.success {
+  fill: #ffa726;
+  background: #1c1c1c;
+  border-color: #ffa726;
+  transform: scale(1);
+}/*# sourceMappingURL=main.css.map */
