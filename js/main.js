@@ -10,14 +10,15 @@ deflated.value = "";
 
 inflated.addEventListener("input",function() {
     if (inflated.value === "") {deflated.value = "";return;}
-    deflated.value = pako.deflate(inflated.value);
+    let temp = pako.deflate(inflated.value, {level: 9});
+    deflated.value = temp;//new TextDecoder().decode(temp);
 });
 
 deflated.addEventListener("input",function() {
     if (deflated.value === "") {inflated.value = "";return;}
-    let array = eval(`new Uint8Array([${deflated.value}]);`),
-        infval = pako.inflate(array);
-    inflated.value = new TextDecoder().decode(infval);
+    //let temp1 = new TextEncoder().encode(deflated.value);
+    let temp2 = pako.inflate(JSON.parse("["+deflated.value+"]"));
+    inflated.value = new TextDecoder().decode(temp2);
 });
 
 function download(content, fileName, contentType, who) {
